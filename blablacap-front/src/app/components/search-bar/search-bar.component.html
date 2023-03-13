@@ -1,0 +1,50 @@
+<form [formGroup]="searchForm">
+  <div class="col-10" style="width: 70%; margin: auto">
+    <div class="row">
+      <div class="col no-padding">
+        <div class="input-group mb-3">
+          <span class="input-group-text"
+            ><fa-icon [icon]="mapIcon"></fa-icon
+          ></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Origin"
+            aria-label="Origin"
+            aria-describedby="basic-addon1"
+            formControlName="origin"
+          />
+        </div>
+      </div>
+      <div class="col no-padding">
+        <div class="input-group mb-3">
+          <span class="input-group-text"
+            ><fa-icon [icon]="locationIcon"></fa-icon
+          ></span>
+          <select type="text" class="form-control" formControlName="destination">
+            <option value="" selected disabled>Destination</option>
+            <option *ngFor="let destination of destinations" [value]="destination">{{destination}}</option>
+        </select>
+        </div>
+      </div>
+      <div class="col no-padding">
+        <div class="input-group input-group-custom">
+          <span class="input-group-text custom-span"
+            ><fa-icon [icon]="calendarIcon"></fa-icon
+          ></span>
+          <input type="date" class="form-control" formControlName="depart_date"/>
+
+        </div>
+      </div>
+      <div class="col no-padding">
+        <div class="input-group input-group-custom">
+          <button style="border-radius: 10px; padding-left: 20%; padding-right: 20%;" type="button" class="btn btn-primary" (click)="submitSearch()">
+            <fa-icon style="margin-right: 10px; " [icon]="searchIcon"></fa-icon
+            >Search
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </form>

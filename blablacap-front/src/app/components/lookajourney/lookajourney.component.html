@@ -1,0 +1,49 @@
+<app-search-bar (searchEmitter)="onChangeSearch($event)"></app-search-bar>
+<div class="container top-footer">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-4">
+      <h2 class="propose">Proposed trips</h2>
+
+      <div class="proposed-card" *ngFor="let trip of filteredResults">
+        <div class="centredContent">
+          <b>{{ trip.start_point }}-{{ trip.dest_office }}</b>
+        </div>
+        <h4 class="margins">
+          Departure: <b>{{ trip.departure_time }}</b>
+        </h4>
+        <h4 class="margins top">
+          <b>Meeting point: </b>{{ trip.meeting_point_desc }}
+        </h4>
+        <h2 class="proposal">PROPOSAL</h2>
+      </div>
+    </div>
+    <div class="col-2"></div>
+    <div class="col-4">
+      <h2 class="create">Created trips</h2>
+      <div class="created-card" *ngFor="let trip of trips">
+        <div class="centredContent">
+          <b>{{ trip.start_point }}-{{ trip.dest_office }}</b>
+        </div>
+        <h4 class="margins" style="margin-bottom: 0">
+          <b>{{ trip.departure_time }}</b>
+        </h4>
+        <h5 class="hour" style="margin-bottom: 0">02:00 hour</h5>
+        <h4 class="margins-create">Arrive: <b>12:00</b></h4>
+        <h4 class="margins top">
+          <b>Meeting point: </b>{{ trip.meeting_point_desc }}
+        </h4>
+        <div class="side">
+          <h2 class="price">{{ trip.price }}€</h2>
+          <h2 class="places">
+
+            <ng-container *ngFor="let item of ' '.repeat(trip.aviable_seats).split('')">
+              <img   src="assets/images/seat.png" />
+            </ng-container>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>

@@ -1,0 +1,249 @@
+<div class="container mt-5 bg-grey">
+  <div  id="container" class="row" style="background-color: rgb(248, 249, 251); border-left: 2px; border-color: rgb(94, 94, 94);">
+    <div class="col-sm-6">
+      <img style="margin-left: 20%; margin-top: 8%;" src="\assets\images\foto.jpg" width="400" height="341" alt="car"
+        position="absolute">
+
+      <p style="text-align: center;  margin-top: 8%; font-size: 49px">Create a trip</p>
+      <p style="text-align: center; margin-top: 8%; font-size: 15px"><em>
+          Complete the following information to share your trip with your companions</em></p>
+    </div>
+    <div class="col-sm-6">
+      <form [formGroup]="formTrip" (ngSubmit)="onSubmit()">
+        <fieldset>
+
+          <!-- Text input-->
+
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(253, 253, 253); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+              </svg>
+            </span>
+            <input type="text" class="form-control" placeholder="Origin" aria-label="Origin"
+              aria-describedby="basic-addon1" id="ciudadOrigen" formControlName="ciudadOrigen" maxlength="44" />
+          </div>
+          <div *ngIf="formTrip.get('ciudadOrigen')?.touched &&
+                formTrip.get('ciudadOrigen')?.errors?.['required']" class="alert alert-danger" style="width: 81%">
+            This field is required
+          </div>
+          <div class="form-group" style="margin-top: 0.5cm; width: 81%;">
+
+            <div class="input-group">
+              <span class="input-group-text" style="background-color: rgb(253, 253, 253); border-right: white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z" />
+                </svg>
+              </span>
+              <select class="form-control" name="Destino" id="destino" formControlName="destino">
+                <option value="" selected style="color: grey;" disabled>Destination</option>
+                <option value="Murcia">Murcia</option>
+                <option value="Valencia">Valencia</option>
+              </select>
+            </div>
+            <div *ngIf="formTrip.get('destino')?.touched &&
+                    formTrip.get('destino')?.errors?.['required']" class="alert alert-danger" style="width: 100%;">
+              This field is required
+            </div>
+            </div>
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(253, 253, 253); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z" />
+              </svg>
+            </span>
+            <input type="date" pattern="\d{4}-\d{2}-\d{2}" class="form-control" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1"
+              style="border-top-right-radius: 7px; border-bottom-right-radius: 7px;" id="fechaViaje"
+              formControlName="fechaViaje"/>
+          </div>
+          <div *ngIf="formTrip.get('fechaViaje')?.touched &&
+                formTrip.get('fechaViaje')?.errors?.['required']" class="alert alert-danger" style="width: 81%;">
+            This field is required
+          </div>
+          <div *ngIf="date_alert" class="alert alert-danger" style="width: 81%;">
+            The date must not be less than the current one
+          </div>
+          <!-- Text input-->
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(253, 253, 253); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-clock-fill" viewBox="0 0 16 16">
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+              </svg>
+            </span>
+            <input type="time" class="form-control" placeholder="hour" aria-label="hour" aria-describedby="basic-addon1"
+              style="border-top-right-radius: 7px; border-bottom-right-radius: 7px;" id="horaViaje"
+              formControlName="horaViaje" />
+          </div>
+          <div *ngIf="formTrip.get('horaViaje')?.touched &&
+                formTrip.get('horaViaje')?.errors?.['required']" class="alert alert-danger" style="width: 81%;">This
+            field is required
+          </div>
+          <!-- Text input-->
+
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(253, 253, 253); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                <path
+                  d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17 1.247 0 3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+              </svg>
+            </span>
+            <select type="text" class="form-control" aria-label="car" aria-describedby="basic-addon1" id="coche"
+              formControlName="coche" [(ngModel)]="carSelected" (change)="selectSeats()">
+              <option value="" style="color: grey" selected disabled>Chose a car</option>
+              <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">{{ vehicle.model }}, color: {{ vehicle.color }}</option>
+            </select>
+            <!-- 451--INI-->
+           
+              <span class="input-group-text" style="background-color: rgb(255, 255, 255); border-left: white">
+                <div data-toggle="modal" data-target="#myModal" (click)="openModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
+                  viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                </svg>
+              </div>
+              </span>
+              
+            <!-- 451--FIN-->
+          </div>
+          <div *ngIf="formTrip.get('coche')?.touched &&
+                formTrip.get('coche')?.errors?.['required']" class="alert alert-danger" style="width: 81%;">This
+            field is required
+          </div>
+
+
+          <!-- Text input-->
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(253, 253, 253); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path
+                  d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+              </svg>
+            </span>
+            <select type="text" class="form-control" aria-label="seats" aria-describedby="basic-addon1" id="asientosDisp" formControlName="asientosDisp" >
+              <option value="" style="color: grey" selected disabled>Seats aviable</option>
+              <option *ngFor="let seat of seats_av" [value]="seat">{{ seat }}</option>
+            </select>
+            <!-- <input type="number" size="1" minlength="1" maxlength="2" min="1" max="8" class="form-control"
+              placeholder="{{ carSelected }}" aria-label="seats" aria-describedby="basic-addon1"
+              style="border-top-right-radius: 7px; border-bottom-right-radius: 7px;" id="asientosDisp"
+              formControlName="asientosDisp" /> -->
+          </div>
+          <div *ngIf="formTrip.get('asientosDisp')?.touched &&
+                  formTrip.get('asientosDisp')?.errors?.['required']" class="alert alert-danger"
+            style="width: 81%;">This field is required
+          </div>
+          <div *ngIf="formTrip.get('asientosDisp')?.touched &&
+                  formTrip.get('asientosDisp')?.errors?.['pattern']" class="alert alert-danger" style="width: 81%;">
+            This field must be greater than zero
+          </div>
+
+          <!-- Text input-->
+
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(255, 255, 255); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash"
+                viewBox="0 0 16 16">
+                <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                <path
+                  d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
+              </svg>
+            </span>
+            <input type="number" step="any" minlength="1" maxlength="2" min="0" class="form-control"
+              placeholder="Price per person (&#8364;)" aria-label="price" aria-describedby="basic-addon1" id="precio"
+              formControlName="precio" />
+            <!-- 441--INI-->
+            <span class="input-group-text" style="background-color: rgb(255, 255, 255); border-left: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor"
+                class="bi bi-currency-euro" viewBox="0 0 16 16"
+                style="background-color: rgb(255, 255, 255); border-left: black; width: 81%;">
+                <path
+                  d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z" />
+              </svg>
+            </span>
+            <!-- 441--FIN-->
+          </div>
+          <div *ngIf="formTrip.get('precio')?.touched &&
+                formTrip.get('precio')?.errors?.['required']" class="alert alert-danger" style="width: 81%;">This
+            field is required
+          </div>
+          <div *ngIf="formTrip.get('precio')?.touched &&
+                formTrip.get('precio')?.errors?.['pattern']" class="alert alert-danger" style="width: 81%;">This
+            field must be numeric
+          </div>
+
+          <!-- radio checks -->
+          <div class="input-group" style="margin-top: 0.5cm; width: 81%;">
+            <span class="input-group-text" style="background-color: rgb(255, 255, 255); border-right: white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z" />
+              </svg>
+            </span>
+            <textarea class="form-control" name="comment" placeholder="Explain where the meeting point is"
+              id="puntoEncuentro" formControlName="puntoEncuentro">
+            </textarea>
+
+          </div>
+          <div *ngIf="formTrip.get('puntoEncuentro')?.touched &&
+                formTrip.get('puntoEncuentro')?.errors?.['required']" class="alert alert-danger"
+            style="width: 81%;">This field is required
+          </div>
+
+          <!-- Button -->
+          <div class="form-group" style="width: 100%;">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4 width:100%">
+              <button type="submit" class="btn btn-primary" style="width: 245%; margin: 0 auto;">
+                Create a trip<span class="glyphicon glyphicon-send"></span></button>
+            </div>
+          </div>
+          <div style="margin-top: 3%;">
+
+            <!-- /.container 438 -Delete-Propose-Trip-Button
+            <div class="row">
+              <div class="col-sm-3"><hr style="width: 370%"></div>
+              <div class="col-sm-4"  style="text-align: center;"><b>O</b></div>
+            </div>-->
+            <!-- /.
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-dark" style="width: 245%; margin: 0 auto;"[disabled]="formTrip.invalid">Propose a trip <span class="glyphicon glyphicon-send"></span></button>
+            </div>
+            <div style="margin-top: 3%;">
+              <div class="position-absolute">
+                <span class="position-absolute__content">
+                  <a class="nav-link" routerLink=""><b>Cancel</b></a>
+                </span>
+              </div>
+            </div>FIN-->
+
+            <!-- /.container 470-Enable-Cancel-button-in-Publish-a-Tip-INI-->
+            <div style="margin-top: 3%;">
+              <div class="position-absolute">
+                <span class="position-absolute__content">
+                  <a class="nav-link" routerLink=""><b>Cancel</b></a>
+                </span>
+              </div>
+            </div>
+            <!-- /.container 470-Enable-Cancel-button-in-Publish-a-Tip-FIN-->
+
+          </div>
+          <div class="form-group" style="margin-bottom: 30px; width: 100%;">
+            <label class="col-md-4 control-label"></label>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>

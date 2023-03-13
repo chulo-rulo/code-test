@@ -1,0 +1,136 @@
+.findTrip {
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+}
+.centredContent {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.aligned {
+  position: relative;
+}
+
+.usersIcon {
+  margin-left: 50%;
+
+}
+
+ngb-carousel {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+ngb-carousel img {
+  width: 100%;
+  outline: none;
+}
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+
+.carousel-item.active{
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+   z-index: 20;
+}
+
+.carousel-control-next {
+   z-index: 20;
+}
+
+.carousel-indicators{
+  z-index: 20;
+}
+
+.paragraph {
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.lastIcon {
+  margin-left: 60%;
+}
+
+.hrstyle {
+  max-width: 6%;
+  margin-left: 47%;
+}
+
+.no-padding{
+  padding-left: 0;
+  padding-right: 0;
+}
+.full-width{
+  width: 100%;
+}
+
+.whiteZone{
+  background-color: white;
+  border-left: white;
+  border-right: 1px solid #ced4da;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+}
+
+.dateInput {
+  width: 200px;
+
+}
+
+.input-group-custom {
+
+
+}
+
+.custom-span {
+  display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    border-radius: 0.375rem;
+}
+
+
+.no-border {
+
+}
+
+.next-to-icon {
+  margin-left: 30%;
+  margin-top: -38%;
+}
+
+.next-to-lastIcon {
+  margin-left: 10%;
+  margin-top: -15%;
+}

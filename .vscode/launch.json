@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BlablacapApplication<blablacap>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.capgemini.blablacap.BlablacapApplication",
+            "projectName": "blablacap",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

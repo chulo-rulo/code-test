@@ -1,0 +1,25 @@
+.position-absolute {
+    position: relative;
+  
+    height: 50px;
+    width: 200px;
+  
+  }
+  
+  .position-absolute__content {
+    left: 130%;
+    position: absolute;
+    top: 50%;
+  
+    transform: translate(-50%, -50%);
+  }
+
+  .image {
+    left: 130%;
+    position: absolute;
+    top: 50%;
+  
+    transform: translate(-50%, -50%);
+  }
+
+  

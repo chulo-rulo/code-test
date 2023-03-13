@@ -1,0 +1,87 @@
+.centredContent {
+  margin-top: 3%;
+
+  text-align: center;
+}
+
+.proposed-card {
+  padding-top: 1%;
+  width:100%;
+  height: 9rem;
+  background: #ffff;
+  margin-bottom: 10%;
+  box-shadow: 0 1px 25px rgba(0,0,0,0.2);
+  background-color: #B7DAE8;
+
+}
+
+.created-card {
+  padding-top: 1%;
+
+  width: 45rem;
+  height: 14.5rem;
+  margin-bottom: 10%;
+  box-shadow: 0 1px 25px rgba(0,0,0,0.2);
+  background-color: white;
+}
+
+.margins {
+  margin-left: 5%;
+
+}
+
+.top {
+  margin-top: 10%;
+}
+
+.hour {
+  margin-left: 10%;
+
+  color: grey;
+}
+
+.proposal {
+  margin-left: 70%;
+  margin-top: -26%;
+}
+
+.price {
+  margin-left: 38rem;
+  margin-top: -38%;
+}
+
+.places {
+  margin-left: 90%;
+  display: inline-flex;
+}
+
+.seats {
+
+}
+
+.propose {
+  margin-left: 30%;
+
+
+}
+
+.create {
+     margin-left: 72%;
+
+
+}
+
+.top-footer {
+  margin-top: 2%;
+  margin-bottom: 40%;
+}
+
+.margins-create {
+  margin-bottom: 0;
+  margin-left: 5%;
+}
+
+.side {
+  margin-top: 7rem;
+  margin-right: 4rem;
+}
